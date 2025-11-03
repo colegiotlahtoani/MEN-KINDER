@@ -1,436 +1,275 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Colegio Tlahtoani – Menú Escolar</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --azul-primario: #1E88E5;
-            --azul-oscuro: #1565C0;
-            --verde-secundario: #43A047;
-            --naranja: #FB8C00;
-            --amarillo: #FDD835;
-            --blanco: #FFFFFF;
-            --gris-muy-claro: #FAFAFA;
-            --gris-medio: #E0E0E0;
-            --gris-oscuro: #757575;
-            --texto-oscuro: #212121;
-            --shadow: rgba(33,33,33,0.1);
-            --gradient-1: linear-gradient(135deg, var(--azul-primario), var(--azul-oscuro));
-            --gradient-2: linear-gradient(135deg, var(--verde-secundario), #2E7D32);
-            --gradient-3: linear-gradient(135deg, var(--naranja), var(--amarillo));
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Colegio Tlahtoani – Menú Escolar</title>
 
-        * {
-            box-sizing: border-box;
-            margin:0;
-            padding:0;
-        }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-        body {
-            font-family: Inter, sans-serif;
-            background: var(--gris-muy-claro);
-            color: var(--texto-oscuro);
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.5;
-        }
+  <!-- Preload imágenes -->
+  <link rel="preload" href="imagenmenu.png" as="image" fetchpriority="high">
+  <link rel="preload" href="logo.png" as="image" fetchpriority="high">
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 16px;
-        }
+  <style>
+    :root {
+      --azul-primario: #1E88E5;
+      --azul-oscuro: #1565C0;
+      --verde-secundario: #43A047;
+      --naranja: #FB8C00;
+      --amarillo: #FDD835;
 
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: var(--gradient-1);
-            padding: 18px;
-            border-radius: 16px;
-            box-shadow: 0 6px 24px var(--shadow);
-            margin-bottom: 24px;
-        }
+      --blanco: #FFFFFF;
+      --gris-muy-claro: #FAFAFA;
+      --gris-medio: #E0E0E0;
+      --gris-oscuro: #757575;
+      --texto-oscuro: #212121;
 
-        .logo-box {
-            width: 100px;
-            height: 100px;
-            background: var(--blanco);
-            border-radius: 16px;
-            padding: 8px;
-            box-shadow: 0 3px 16px rgba(255,255,255,0.3);
-            border: 2px solid var(--blanco);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      --shadow: rgba(33,33,33,0.1);
+      --gradient-1: linear-gradient(135deg, var(--azul-primario), var(--azul-oscuro));
+      --gradient-2: linear-gradient(135deg, var(--verde-secundario), #2E7D32);
+      --gradient-3: linear-gradient(135deg, var(--naranja), var(--amarillo));
+    }
 
-        .logo-box img {
-            width: 80%;
-            height: auto;
-            object-fit: contain;
-        }
+    * { box-sizing: border-box; margin:0; padding:0; }
 
-        .hero {
-            text-align: center;
-            margin-bottom: 24px;
-        }
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--gris-muy-claro);
+      color: var(--texto-oscuro);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
 
-        .hero img {
-            max-width: 100%;
-            max-height: 260px;
-            object-fit: cover;
-            border-radius: 16px;
-            box-shadow: 0 6px 24px var(--shadow);
-            border: 2px solid var(--gris-medio);
-        }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+    }
 
-        .menu-grid {
-            display: grid;
-            gap: 24px;
-            margin-top: 20px;
-        }
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--gradient-1);
+      padding: 18px;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px var(--shadow);
+      margin-bottom: 24px;
+    }
 
-        @media(min-width:768px){
-            .menu-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
-        }
+    .logo-box {
+      width: 100px;
+      height: 100px;
+      background: var(--blanco);
+      border-radius: 16px;
+      padding: 8px;
+      box-shadow: 0 3px 16px rgba(255,255,255,0.3);
+      border: 2px solid var(--blanco);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .dia-card {
-            background: var(--blanco);
-            border-radius: 16px;
-            box-shadow: 0 6px 20px var(--shadow);
-            border: 1px solid var(--gris-medio);
-            overflow: hidden;
-            transition: transform .3s ease, box-shadow .3s ease;
-        }
+    .logo-box img {
+      width: 80%;
+      height: auto;
+      object-fit: contain;
+    }
 
-        .dia-card:hover{
-            transform:translateY(-4px);
-            box-shadow:0 8px 24px rgba(33,33,33,0.15);
-        }
+    .hero {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .hero img {
+      max-width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px var(--shadow);
+      border: 2px solid var(--gris-medio);
+    }
 
-        .dia-header {
-            background: var(--gradient-2);
-            color: var(--blanco);
-            font-weight: 700;
-            padding: 12px;
-            text-align: center;
-            font-size:1.1rem;
-        }
+    .menu-grid {
+      display: grid;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    @media(min-width:768px){
+      .menu-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+    }
 
-        .comidas {
-            padding: 16px 20px;
-        }
+    .dia-card {
+      background: var(--blanco);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px var(--shadow);
+      border: 1px solid var(--gris-medio);
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .dia-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 8px 24px rgba(33,33,33,0.15);
+    }
 
-        .comida h4 {
-            color: var(--naranja);
-            font-size: 1.05rem;
-            margin-bottom: 6px;
-            font-weight:600;
-        }
+    .dia-header {
+      background: var(--gradient-2);
+      color: var(--blanco);
+      font-weight: 700;
+      padding: 12px;
+      text-align: center;
+      font-size:1.1rem;
+    }
 
-        .comida p {
-            margin-left: 16px;
-            position: relative;
-            margin-bottom: 8px;
-        }
+    .comidas { padding: 16px 20px; }
 
-        .comida p::before {
-            content:"▸";
-            position:absolute;
-            left:-12px;
-            color:var(--azul-primario);
-            font-weight:bold;
-        }
+    .comida h4 {
+      color: var(--naranja);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      font-weight:600;
+    }
+    .comida p {
+      margin-left: 16px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .comida p::before {
+      content:"▸";
+      position:absolute;
+      left:-12px;
+      color:var(--azul-primario);
+      font-weight:bold;
+    }
 
-        .nutricion {
-            background: var(--gradient-3);
-            padding: 26px 18px;
-            text-align: center;
-            color: var(--blanco);
-            border-radius: 16px;
-            margin: 30px 0 20px;
-            box-shadow: 0 6px 22px var(--shadow);
-        }
+    .nutricion {
+      background: var(--gradient-3);
+      padding: 26px 18px;
+      text-align: center;
+      color: var(--blanco);
+      border-radius: 16px;
+      margin: 30px 0 20px;
+      box-shadow: 0 6px 22px var(--shadow);
+    }
+    .nutricion h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .nutricion p {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: .9rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
 
-        .nutricion h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .nutricion p {
-            max-width: 620px;
-            margin: 0 auto;
-            font-size: .9rem;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        footer {
-            text-align: center;
-            font-size: .8rem;
-            color: var(--gris-oscuro);
-            padding: 16px 0;
-            margin-top: 26px;
-            border-top:1px solid var(--gris-medio);
-        }
-
-        /* Nuevos estilos añadidos */
-        .semana-selector {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            gap: 10px;
-        }
-        
-        .semana-btn {
-            padding: 10px 20px;
-            background: var(--azul-primario);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        
-        .semana-btn.active {
-            background: var(--azul-oscuro);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .semana-btn:hover {
-            background: var(--azul-oscuro);
-        }
-        
-        .menu-semana {
-            display: none;
-        }
-        
-        .menu-semana.active {
-            display: block;
-        }
-        
-        .fruta-temporada {
-            color: var(--verde-secundario);
-            font-weight: 600;
-        }
-    </style>
+    footer {
+      text-align: center;
+      font-size: .8rem;
+      color: var(--gris-oscuro);
+      padding: 16px 0;
+      margin-top: 26px;
+      border-top:1px solid var(--gris-medio);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo-box">
-                <!-- Logo simulado -->
-                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="40" cy="40" r="38" fill="#1E88E5" stroke="white" stroke-width="4"/>
-                    <path d="M25 35L40 50L55 35" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                    <circle cx="40" cy="35" r="8" fill="white"/>
-                    <path d="M30 25L50 25" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                </svg>
-            </div>
-        </header>
-        
-        <section class="hero">
-            <!-- Imagen de menú simulada -->
-            <svg width="100%" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#1E88E5;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#43A047;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                <rect width="800" height="200" fill="url(#grad1)" rx="16"/>
-                <text x="400" y="100" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="32" font-weight="700">Menú Escolar Semanal</text>
-                <text x="400" y="140" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="18" font-weight="500">Colegio Tlahtoani - Nutrición para el Futuro</text>
-            </svg>
-        </section>
-        
-        <div class="semana-selector">
-            <button class="semana-btn active" data-semana="1">Semana 1</button>
-            <button class="semana-btn" data-semana="2">Semana 2</button>
+  <div class="container">
+    <header>
+      <div class="logo-box">
+        <img src="logo.png" alt="Logo Colegio Tlahtoani">
+      </div>
+    </header>
+
+    <section class="hero">
+      <img src="imagenmenu.png" alt="Menú Escolar Portada">
+    </section>
+
+    <!-- Cards de menú actualizado -->
+    <div class="menu-grid">
+      <div class="dia-card">
+        <div class="dia-header">Lunes</div>
+        <div class="comidas">
+          <div class="comida">
+            <h4>Desayuno</h4>
+            <p>Quesadillas, fruta de temporada 🫔🍎</p>
+          </div>
+          <div class="comida">
+            <h4>Comida</h4>
+            <p>Chuleta con puré de papa 🥩🥔</p>
+          </div>
         </div>
-        
-        <!-- Menú Semana 1 -->
-        <div class="menu-semana active" id="semana1">
-            <div class="menu-grid">
-                <div class="dia-card">
-                    <div class="dia-header">Lunes</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Hot cakes con fruta 🥞🍓</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Arrachera y frijoles de la olla 🥩🫘</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="dia-card">
-                    <div class="dia-header">Martes</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Quesadillas con frijoles 🫔</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Tiritas de pollo con arroz y verdura 🍗🥦</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="dia-card">
-                    <div class="dia-header">Miércoles</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Huevo con jamón 🍳</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Caldo de pollo con verduras 🥣</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="dia-card">
-                    <div class="dia-header">Jueves</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Chilaquiles con frijoles y queso 🧀🌶️</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Sopa de fideo con taquitos dorados de pollo 🍜🌮</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="dia-card">
-                    <div class="dia-header">Viernes</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Wafles con fruta 🧇🍓</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Morisqueta 🍛</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+
+      <div class="dia-card">
+        <div class="dia-header">Martes</div>
+        <div class="comidas">
+          <div class="comida">
+            <h4>Desayuno</h4>
+            <p>Huevo en salsa de jitomate, fruta de temporada 🍅🍳</p>
+          </div>
+          <div class="comida">
+            <h4>Comida</h4>
+            <p>Tiritas de pescado con verdura 🐟🥦</p>
+          </div>
         </div>
-        
-        <!-- Menú Semana 2 (Nuevo menú) -->
-        <div class="menu-semana" id="semana2">
-            <div class="menu-grid">
-                <div class="dia-card">
-                    <div class="dia-header">Lunes</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Quesadillas, <span class="fruta-temporada">fruta de temporada</span> 🫔🍎</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Chuleta con puré de papa 🥩🥔</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="dia-card">
-                    <div class="dia-header">Martes</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Huevo en salsa de jitomate, <span class="fruta-temporada">fruta de temporada</span> 🍅🥚</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Tiritas de pescado con verdura 🐟🥕</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="dia-card">
-                    <div class="dia-header">Miércoles</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Sandwich de jamón, <span class="fruta-temporada">fruta de temporada</span> 🥪🍌</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Crema de brócoli con picadillo 🥦🍲</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="dia-card">
-                    <div class="dia-header">Jueves</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Avena con manzana o plátano, galletas 🍎🍌🍪</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Ensalada de pollo 🥗🍗</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="dia-card">
-                    <div class="dia-header">Viernes</div>
-                    <div class="comidas">
-                        <div class="comida">
-                            <h4>Desayuno</h4>
-                            <p>Hot cakes con fruta y miel 🥞🍯</p>
-                        </div>
-                        <div class="comida">
-                            <h4>Comida</h4>
-                            <p>Arroz con pollo y verdura 🍚🍗🥦</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+
+      <div class="dia-card">
+        <div class="dia-header">Miércoles</div>
+        <div class="comidas">
+          <div class="comida">
+            <h4>Desayuno</h4>
+            <p>Sandwich de jamón, fruta de temporada 🥪🍌</p>
+          </div>
+          <div class="comida">
+            <h4>Comida</h4>
+            <p>Crema de brócoli con picadillo 🥦🍲</p>
+          </div>
         </div>
-        
-        <section class="nutricion">
-            <h2>¡Alimentación Saludable, Mente Activa! 🧠💪</h2>
-            <p>Cada platillo está planeado para aportar energía, nutrientes esenciales y bienestar a nuestros estudiantes.</p>
-        </section>
-        
-        <footer>
-            © 2025 Colegio Tlahtoani | Nutrición para el Futuro
-        </footer>
+      </div>
+
+      <div class="dia-card">
+        <div class="dia-header">Jueves</div>
+        <div class="comidas">
+          <div class="comida">
+            <h4>Desayuno</h4>
+            <p>Avena con manzana o plátano, galletas 🍎🍌🍪</p>
+          </div>
+          <div class="comida">
+            <h4>Comida</h4>
+            <p>Ensalada de pollo 🥗🍗</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dia-card">
+        <div class="dia-header">Viernes</div>
+        <div class="comidas">
+          <div class="comida">
+            <h4>Desayuno</h4>
+            <p>Hot cakes con fruta y miel 🥞🍓🍯</p>
+          </div>
+          <div class="comida">
+            <h4>Comida</h4>
+            <p>Arroz con pollo y verdura 🍚🍗🥕</p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script>
-        // Funcionalidad para cambiar entre semanas
-        document.addEventListener('DOMContentLoaded', function() {
-            const semanaBtns = document.querySelectorAll('.semana-btn');
-            const menuSemanas = document.querySelectorAll('.menu-semana');
-            
-            semanaBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remover clase active de todos los botones
-                    semanaBtns.forEach(b => b.classList.remove('active'));
-                    // Agregar clase active al botón clickeado
-                    this.classList.add('active');
-                    
-                    // Ocultar todos los menús
-                    menuSemanas.forEach(menu => menu.classList.remove('active'));
-                    
-                    // Mostrar el menú correspondiente
-                    const semanaId = this.getAttribute('data-semana');
-                    document.getElementById(`semana${semanaId}`).classList.add('active');
-                });
-            });
-        });
-    </script>
+    <section class="nutricion">
+      <h2>¡Alimentación Saludable, Mente Activa! 🧠💪</h2>
+      <p>Cada platillo está planeado para aportar energía, nutrientes esenciales y bienestar a nuestros estudiantes.</p>
+    </section>
+
+    <footer>
+      © 2025 Colegio Tlahtoani | Nutrición para el Futuro
+    </footer>
+  </div>
 </body>
 </html>
