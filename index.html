@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Colegio Tlahtoani – Menú Escolar Preescolar</title>
 
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
@@ -16,16 +15,14 @@
 <style>
 :root{
   --bg:#f5f7fb;
-  --surface:rgba(255,255,255,.9);
   --text:#111827;
   --muted:#6b7280;
 
   --blue:#0a84ff;
   --purple:#7c3aed;
   --green:#34c759;
-  --lime:#b7ff00; /* verde limón */
+  --lime:#b7ff00;
   --orange:#ff9f0a;
-  --yellow:#ffd60a;
 
   --shadow:0 16px 40px rgba(0,0,0,.10);
   --radius-xl:26px;
@@ -36,11 +33,14 @@
 
 body{
   font-family:Inter,sans-serif;
+
+  /* Colores menos difuminados (más visibles) */
   background:
-    radial-gradient(700px 400px at 10% 10%, rgba(183,255,0,.25), transparent),
-    radial-gradient(600px 400px at 90% 10%, rgba(10,132,255,.18), transparent),
-    radial-gradient(700px 500px at 50% 100%, rgba(255,159,10,.18), transparent),
+    radial-gradient(500px 300px at 10% 10%, rgba(183,255,0,.45), transparent 60%),
+    radial-gradient(450px 280px at 90% 15%, rgba(10,132,255,.35), transparent 60%),
+    radial-gradient(500px 300px at 50% 95%, rgba(255,159,10,.35), transparent 60%),
     var(--bg);
+
   color:var(--text);
 }
 
@@ -59,8 +59,8 @@ body{
   gap:12px;
   padding:12px;
   border-radius:var(--radius-xl);
-  background:var(--surface);
-  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
   box-shadow:var(--shadow);
 }
 
@@ -92,12 +92,11 @@ body{
 .hero-inner{padding:16px;display:grid;gap:12px;}
 
 .hero-title h1{
-  font-size:clamp(1.4rem,4vw,2rem);
+  font-size:clamp(1.5rem,4vw,2.1rem);
   font-weight:900;
   letter-spacing:.5px;
   line-height:1.1;
 
-  /* Tipografía más bonita */
   background:linear-gradient(90deg,#0a84ff,#34c759,#7c3aed);
   -webkit-background-clip:text;
   background-clip:text;
@@ -239,7 +238,6 @@ footer{
 <body>
 <div class="container">
 
-<!-- TOPBAR -->
 <div class="topbar">
   <div class="brand">
     <div class="logo-box">
@@ -252,11 +250,10 @@ footer{
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-title">
-      <h1>Menú Preescolar<br>Martes a Viernes</h1>
+      <h1>Menú Preescolar</h1>
       <div class="badge">🧠💪 Alimentación saludable</div>
     </div>
 
@@ -266,7 +263,6 @@ footer{
   </div>
 </section>
 
-<!-- MENÚ -->
 <section class="section">
 <div class="section-head">
 <h2>Platillos de la semana</h2>
