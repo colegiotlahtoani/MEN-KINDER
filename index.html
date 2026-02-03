@@ -1,380 +1,348 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Colegio Tlahtoani – Menú Escolar Preescolar</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Colegio Tlahtoani – Menú Escolar Preescolar</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
 
-  <!-- Preload imágenes -->
-  <link rel="preload" href="imagenmenu.png" as="image" fetchpriority="high" />
-  <link rel="preload" href="logo.png" as="image" fetchpriority="high" />
+<link rel="preload" href="imagenmenu.png" as="image">
+<link rel="preload" href="logo.png" as="image">
 
-  <style>
-    :root{
-      --bg: #f5f7fb;
-      --surface: rgba(255,255,255,.85);
-      --text: #111827;
-      --muted: #6b7280;
+<style>
+:root{
+  --bg:#f5f7fb;
+  --surface:rgba(255,255,255,.9);
+  --text:#111827;
+  --muted:#6b7280;
 
-      /* Colores más vivos */
-      --blue: #0a84ff;
-      --purple: #7c3aed;
-      --green: #34c759;
-      --orange: #ff9f0a;
-      --pink: #ff2d55;
-      --yellow: #ffd60a;
+  --blue:#0a84ff;
+  --purple:#7c3aed;
+  --green:#34c759;
+  --lime:#b7ff00; /* verde limón */
+  --orange:#ff9f0a;
+  --yellow:#ffd60a;
 
-      --shadow: 0 16px 40px rgba(0,0,0,.10);
-      --radius-xl: 26px;
-      --radius-lg: 18px;
-    }
+  --shadow:0 16px 40px rgba(0,0,0,.10);
+  --radius-xl:26px;
+  --radius-lg:18px;
+}
 
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{
-      font-family: Inter, sans-serif;
-      background:
-        radial-gradient(600px 400px at 10% 10%, rgba(124,58,237,.18), transparent),
-        radial-gradient(600px 400px at 90% 10%, rgba(255,45,85,.15), transparent),
-        radial-gradient(700px 500px at 50% 100%, rgba(255,159,10,.18), transparent),
-        var(--bg);
-      color: var(--text);
-    }
+*{box-sizing:border-box;margin:0;padding:0;}
 
-    .container{
-      width: min(1000px, calc(100% - 24px));
-      margin:auto;
-      padding:14px 0 22px;
-    }
+body{
+  font-family:Inter,sans-serif;
+  background:
+    radial-gradient(700px 400px at 10% 10%, rgba(183,255,0,.25), transparent),
+    radial-gradient(600px 400px at 90% 10%, rgba(10,132,255,.18), transparent),
+    radial-gradient(700px 500px at 50% 100%, rgba(255,159,10,.18), transparent),
+    var(--bg);
+  color:var(--text);
+}
 
-    /* TOPBAR */
-    .topbar{
-      position: sticky;
-      top:10px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-      padding:12px;
-      border-radius:var(--radius-xl);
-      background:var(--surface);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
-    }
+.container{
+  width:min(1000px,calc(100% - 24px));
+  margin:auto;
+  padding:14px 0 22px;
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
+/* TOPBAR */
+.topbar{
+  position:sticky;
+  top:10px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:var(--radius-xl);
+  background:var(--surface);
+  backdrop-filter:blur(12px);
+  box-shadow:var(--shadow);
+}
 
-    .logo-box{
-      width:50px;height:50px;
-      border-radius:16px;
-      background:white;
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-      box-shadow:0 6px 14px rgba(0,0,0,.12);
-    }
-    .logo-box img{width:78%;}
+.brand{display:flex;align-items:center;gap:10px;}
 
-    .school{
-      font-weight:900;
-      font-size:1rem;
-    }
-    .subtitle{
-      font-size:.85rem;
-      color:var(--muted);
-      font-weight:600;
-    }
+.logo-box{
+  width:50px;height:50px;
+  border-radius:16px;
+  background:white;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  box-shadow:0 6px 14px rgba(0,0,0,.12);
+}
+.logo-box img{width:78%;}
 
-    /* HERO */
-    .hero{
-      margin-top:14px;
-      border-radius:var(--radius-xl);
-      overflow:hidden;
-      background:linear-gradient(135deg,#ffffff,#f0f4ff);
-      box-shadow:var(--shadow);
-    }
+.school{font-weight:900;font-size:1rem;}
+.subtitle{font-size:.85rem;color:var(--muted);font-weight:600;}
 
-    .hero-inner{
-      padding:14px;
-      display:grid;
-      gap:12px;
-    }
+/* HERO */
+.hero{
+  margin-top:14px;
+  border-radius:var(--radius-xl);
+  overflow:hidden;
+  background:linear-gradient(135deg,#ffffff,#f6fff0);
+  box-shadow:var(--shadow);
+}
 
-    .hero-title h1{
-      font-size:1.4rem;
-      font-weight:900;
-      background: linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
-    }
+.hero-inner{padding:16px;display:grid;gap:12px;}
 
-    .badge{
-      display:inline-block;
-      margin-top:6px;
-      padding:8px 12px;
-      border-radius:999px;
-      background:linear-gradient(90deg,var(--green),var(--yellow));
-      font-weight:800;
-      font-size:.85rem;
-    }
+.hero-title h1{
+  font-size:clamp(1.4rem,4vw,2rem);
+  font-weight:900;
+  letter-spacing:.5px;
+  line-height:1.1;
 
-    .cover{
-      border-radius:var(--radius-lg);
-      overflow:hidden;
-    }
-    .cover img{
-      width:100%;
-      height:200px;
-      object-fit:cover;
-    }
+  /* Tipografía más bonita */
+  background:linear-gradient(90deg,#0a84ff,#34c759,#7c3aed);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
 
-    /* SECTION */
-    .section{margin-top:16px;}
-    .section-head{
-      display:flex;
-      justify-content:space-between;
-      padding:0 6px;
-      margin-bottom:10px;
-    }
-    .section-head h2{
-      font-size:1rem;
-      font-weight:900;
-      color:#1f2937;
-    }
+.badge{
+  display:inline-block;
+  margin-top:8px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--green),var(--lime));
+  font-weight:800;
+  font-size:.9rem;
+}
 
-    /* GRID */
-    .menu-grid{
-      display:grid;
-      gap:12px;
-    }
-    @media(min-width:640px){
-      .menu-grid{grid-template-columns:repeat(2,1fr);}
-    }
-    @media(min-width:960px){
-      .menu-grid{grid-template-columns:repeat(4,1fr);}
-    }
+.cover{border-radius:var(--radius-lg);overflow:hidden;}
+.cover img{width:100%;height:200px;object-fit:cover;}
 
-    /* DAY CARD */
-    .day-card{
-      background:linear-gradient(160deg,#ffffff,#f9fbff);
-      border-radius:var(--radius-xl);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
+/* SECTION */
+.section{margin-top:16px;}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  padding:0 6px;
+  margin-bottom:10px;
+}
+.section-head h2{
+  font-size:1rem;
+  font-weight:900;
+}
 
-    .day-top{
-      padding:12px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:linear-gradient(90deg,var(--blue),var(--purple));
-      color:white;
-      font-weight:900;
-    }
+/* GRID */
+.menu-grid{display:grid;gap:12px;}
+@media(min-width:640px){.menu-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:960px){.menu-grid{grid-template-columns:repeat(4,1fr);}}
 
-    .mini-tag{
-      background:white;
-      color:#111;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:.75rem;
-      font-weight:800;
-    }
+/* DAY CARD */
+.day-card{
+  background:linear-gradient(160deg,#ffffff,#f9fff4);
+  border-radius:var(--radius-xl);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
 
-    .content{
-      padding:12px;
-      display:grid;
-      gap:10px;
-    }
+.day-top{
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:linear-gradient(90deg,#0a84ff,#7c3aed);
+  color:white;
+  font-weight:900;
+}
 
-    .block{
-      background:#ffffff;
-      border-radius:16px;
-      padding:12px;
-      box-shadow:0 6px 14px rgba(0,0,0,.08);
-    }
+.mini-tag{
+  background:white;
+  color:#111;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:.75rem;
+  font-weight:800;
+}
 
-    .block-title{
-      display:flex;
-      justify-content:space-between;
-      margin-bottom:6px;
-      font-weight:900;
-      font-size:.95rem;
-    }
+.content{padding:12px;display:grid;gap:10px;}
 
-    .pill{
-      background:rgba(52,199,89,.15);
-      padding:4px 8px;
-      border-radius:999px;
-      font-size:.7rem;
-      font-weight:800;
-    }
+.block{
+  background:white;
+  border-radius:16px;
+  padding:12px;
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+}
 
-    .item{
-      display:flex;
-      gap:8px;
-      font-size:.9rem;
-      color:#374151;
-      font-weight:600;
-    }
+.block-title{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:6px;
+  font-weight:900;
+}
 
-    .bullet{
-      width:8px;height:8px;
-      background:var(--orange);
-      border-radius:50%;
-      margin-top:6px;
-    }
+.pill{
+  background:rgba(52,199,89,.15);
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:.7rem;
+  font-weight:800;
+}
 
-    /* NUTRICIÓN */
-    .nutricion{
-      margin-top:16px;
-      background:linear-gradient(135deg,#ffffff,#fef9ff);
-      border-radius:var(--radius-xl);
-      padding:16px;
-      text-align:center;
-      box-shadow:var(--shadow);
-    }
+.item{
+  display:flex;
+  gap:8px;
+  font-size:.9rem;
+  color:#374151;
+  font-weight:600;
+}
 
-    .nutricion h2{
-      font-size:1.2rem;
-      font-weight:900;
-      background: linear-gradient(90deg,var(--green),var(--blue));
-      -webkit-background-clip:text;
-      color:transparent;
-    }
+.bullet{
+  width:8px;height:8px;
+  background:var(--orange);
+  border-radius:50%;
+  margin-top:6px;
+}
 
-    .nutricion p{
-      color:var(--muted);
-      font-weight:600;
-      font-size:.9rem;
-      margin-top:6px;
-    }
+/* NUTRICIÓN */
+.nutricion{
+  margin-top:16px;
+  background:linear-gradient(135deg,#ffffff,#f3fff0);
+  border-radius:var(--radius-xl);
+  padding:16px;
+  text-align:center;
+  box-shadow:var(--shadow);
+}
 
-    footer{
-      text-align:center;
-      margin-top:14px;
-      font-size:.8rem;
-      color:var(--muted);
-      font-weight:600;
-    }
-  </style>
+.nutricion h2{
+  font-size:1.2rem;
+  font-weight:900;
+  background:linear-gradient(90deg,var(--green),var(--blue));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.nutricion p{
+  color:var(--muted);
+  font-weight:600;
+  font-size:.9rem;
+  margin-top:6px;
+}
+
+footer{
+  text-align:center;
+  margin-top:14px;
+  font-size:.8rem;
+  color:var(--muted);
+  font-weight:600;
+}
+</style>
 </head>
 
 <body>
 <div class="container">
 
-  <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="brand">
-      <div class="logo-box">
-        <img src="logo.png" alt="Logo Colegio Tlahtoani">
-      </div>
-      <div>
-        <div class="school">Colegio Tlahtoani</div>
-        <div class="subtitle">Menú Escolar – Preescolar</div>
-      </div>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="brand">
+    <div class="logo-box">
+      <img src="logo.png" alt="Logo Colegio Tlahtoani">
+    </div>
+    <div>
+      <div class="school">Colegio Tlahtoani</div>
+      <div class="subtitle">Menú Escolar – Preescolar</div>
     </div>
   </div>
+</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div>
-        <h1>Menú Preescolar (Martes a Viernes)</h1>
-        <div class="badge">🧠💪 Alimentación saludable</div>
-      </div>
-      <div class="cover">
-        <img src="imagenmenu.png" alt="Menú Escolar">
-      </div>
-    </div>
-  </section>
-
-  <!-- MENÚ -->
-  <section class="section">
-    <div class="section-head">
-      <h2>Platillos de la semana</h2>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-title">
+      <h1>Menú Preescolar<br>Martes a Viernes</h1>
+      <div class="badge">🧠💪 Alimentación saludable</div>
     </div>
 
-    <div class="menu-grid">
-
-      <!-- MARTES -->
-      <div class="day-card">
-        <div class="day-top">Martes <span class="mini-tag">Preescolar</span></div>
-        <div class="content">
-          <div class="block">
-            <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
-            <div class="item"><span class="bullet"></span>Huevo con jamón</div>
-          </div>
-          <div class="block">
-            <div class="block-title">🍲 Comida <span class="pill">PM</span></div>
-            <div class="item"><span class="bullet"></span>Caldo de albóndigas con verdura y arroz</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- MIÉRCOLES -->
-      <div class="day-card">
-        <div class="day-top">Miércoles <span class="mini-tag">Preescolar</span></div>
-        <div class="content">
-          <div class="block">
-            <div class="block-title">🥪 Desayuno <span class="pill">AM</span></div>
-            <div class="item"><span class="bullet"></span>Sandwich de jamón</div>
-          </div>
-          <div class="block">
-            <div class="block-title">🍝 Comida <span class="pill">PM</span></div>
-            <div class="item"><span class="bullet"></span>Espagueti a la boloñesa</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- JUEVES -->
-      <div class="day-card">
-        <div class="day-top">Jueves <span class="mini-tag">Preescolar</span></div>
-        <div class="content">
-          <div class="block">
-            <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
-            <div class="item"><span class="bullet"></span>Huevo con frijoles</div>
-          </div>
-          <div class="block">
-            <div class="block-title">🍝 Comida <span class="pill">PM</span></div>
-            <div class="item"><span class="bullet"></span>Códitos con pollo en tiras</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- VIERNES -->
-      <div class="day-card">
-        <div class="day-top">Viernes <span class="mini-tag">Preescolar</span></div>
-        <div class="content">
-          <div class="block">
-            <div class="block-title">🥞 Desayuno <span class="pill">AM</span></div>
-            <div class="item"><span class="bullet"></span>Hot cakes con miel y plátano</div>
-          </div>
-          <div class="block">
-            <div class="block-title">🫘 Comida <span class="pill">PM</span></div>
-            <div class="item"><span class="bullet"></span>Enfrijoladas con queso</div>
-          </div>
-        </div>
-      </div>
-
+    <div class="cover">
+      <img src="imagenmenu.png" alt="Menú Escolar">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- NUTRICIÓN -->
-  <section class="nutricion">
-    <h2>¡Alimentación Saludable, Mente Activa! 🧠💪</h2>
-    <p>Cada platillo está planeado para aportar energía y nutrientes esenciales para nuestros estudiantes.</p>
-  </section>
+<!-- MENÚ -->
+<section class="section">
+<div class="section-head">
+<h2>Platillos de la semana</h2>
+</div>
 
-  <footer>© 2025 Colegio Tlahtoani | Nutrición para el Futuro</footer>
+<div class="menu-grid">
+
+<!-- MARTES -->
+<div class="day-card">
+<div class="day-top">Martes <span class="mini-tag">Preescolar</span></div>
+<div class="content">
+<div class="block">
+<div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
+<div class="item"><span class="bullet"></span>Huevo con jamón</div>
+</div>
+<div class="block">
+<div class="block-title">🍲 Comida <span class="pill">PM</span></div>
+<div class="item"><span class="bullet"></span>Caldo de albóndigas con verdura y arroz</div>
+</div>
+</div>
+</div>
+
+<!-- MIÉRCOLES -->
+<div class="day-card">
+<div class="day-top">Miércoles <span class="mini-tag">Preescolar</span></div>
+<div class="content">
+<div class="block">
+<div class="block-title">🥪 Desayuno <span class="pill">AM</span></div>
+<div class="item"><span class="bullet"></span>Sandwich de jamón</div>
+</div>
+<div class="block">
+<div class="block-title">🍝 Comida <span class="pill">PM</span></div>
+<div class="item"><span class="bullet"></span>Espagueti a la boloñesa</div>
+</div>
+</div>
+</div>
+
+<!-- JUEVES -->
+<div class="day-card">
+<div class="day-top">Jueves <span class="mini-tag">Preescolar</span></div>
+<div class="content">
+<div class="block">
+<div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
+<div class="item"><span class="bullet"></span>Huevo con frijoles</div>
+</div>
+<div class="block">
+<div class="block-title">🍝 Comida <span class="pill">PM</span></div>
+<div class="item"><span class="bullet"></span>Códitos con pollo en tiras</div>
+</div>
+</div>
+</div>
+
+<!-- VIERNES -->
+<div class="day-card">
+<div class="day-top">Viernes <span class="mini-tag">Preescolar</span></div>
+<div class="content">
+<div class="block">
+<div class="block-title">🥞 Desayuno <span class="pill">AM</span></div>
+<div class="item"><span class="bullet"></span>Hot cakes con miel y plátano</div>
+</div>
+<div class="block">
+<div class="block-title">🫘 Comida <span class="pill">PM</span></div>
+<div class="item"><span class="bullet"></span>Enfrijoladas con queso</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="nutricion">
+<h2>¡Alimentación Saludable, Mente Activa! 🧠💪</h2>
+<p>Cada platillo está planeado para aportar energía y nutrientes esenciales para nuestros estudiantes.</p>
+</section>
+
+<footer>© 2025 Colegio Tlahtoani | Nutrición para el Futuro</footer>
 
 </div>
 </body>
