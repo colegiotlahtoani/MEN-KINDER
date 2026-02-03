@@ -16,128 +16,119 @@
 
   <style>
     :root {
-      --azul-primario: #1E88E5;
-      --azul-oscuro: #1565C0;
-      --verde-secundario: #43A047;
-      --naranja: #FB8C00;
-      --amarillo: #FDD835;
+      --azul-primario:#1E88E5;
+      --azul-oscuro:#1565C0;
+      --verde-secundario:#43A047;
+      --naranja:#FB8C00;
+      --amarillo:#FDD835;
 
-      --blanco: #FFFFFF;
-      --gris-muy-claro: #FAFAFA;
-      --gris-medio: #E0E0E0;
-      --gris-oscuro: #757575;
-      --texto-oscuro: #212121;
+      --blanco:#FFFFFF;
+      --gris-muy-claro:#FAFAFA;
+      --gris-medio:#E0E0E0;
+      --gris-oscuro:#757575;
+      --texto-oscuro:#212121;
 
-      --shadow: rgba(33,33,33,0.1);
-      --gradient-1: linear-gradient(135deg, var(--azul-primario), var(--azul-oscuro));
-      --gradient-2: linear-gradient(135deg, var(--verde-secundario), #2E7D32);
-      --gradient-3: linear-gradient(135deg, var(--naranja), var(--amarillo));
+      --shadow:rgba(33,33,33,0.1);
+      --gradient-1:linear-gradient(135deg,var(--azul-primario),var(--azul-oscuro));
+      --gradient-2:linear-gradient(135deg,var(--verde-secundario),#2E7D32);
+      --gradient-3:linear-gradient(135deg,var(--naranja),var(--amarillo));
     }
 
-    * { box-sizing: border-box; margin:0; padding:0; }
+    *{box-sizing:border-box;margin:0;padding:0;}
 
-    body {
-      font-family: Inter, sans-serif;
-      background: var(--gris-muy-claro);
-      color: var(--texto-oscuro);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px;
+    body{
+      font-family:Inter,sans-serif;
+      background:var(--gris-muy-claro);
+      color:var(--texto-oscuro);
+      line-height:1.5;
     }
 
-    header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: var(--gradient-1);
-      padding: 18px;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px var(--shadow);
-      margin-bottom: 24px;
+    .container{max-width:1200px;margin:auto;padding:16px;}
+
+    header{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:var(--gradient-1);
+      padding:18px;
+      border-radius:16px;
+      box-shadow:0 6px 24px var(--shadow);
+      margin-bottom:24px;
     }
 
-    .logo-box {
-      width: 100px;
-      height: 100px;
-      background: var(--blanco);
-      border-radius: 16px;
-      padding: 8px;
-      box-shadow: 0 3px 16px rgba(255,255,255,0.3);
-      border: 2px solid var(--blanco);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .logo-box{
+      width:100px;height:100px;
+      background:white;
+      border-radius:16px;
+      padding:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    .logo-box img {
-      width: 80%;
-      height: auto;
-      object-fit: contain;
+    .logo-box img{width:80%;}
+
+    .hero{
+      text-align:center;
+      margin-bottom:24px;
     }
 
-    .hero {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-    .hero img {
-      max-width: 100%;
-      max-height: 260px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px var(--shadow);
-      border: 2px solid var(--gris-medio);
+    .hero img{
+      max-width:100%;
+      max-height:260px;
+      object-fit:cover;
+      border-radius:16px;
+      box-shadow:0 6px 24px var(--shadow);
+      border:2px solid var(--gris-medio);
     }
 
-    .menu-grid {
-      display: grid;
-      gap: 24px;
-      margin-top: 20px;
+    .menu-grid{
+      display:grid;
+      gap:24px;
+      margin-top:20px;
     }
+
     @media(min-width:768px){
       .menu-grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
     }
 
-    .dia-card {
-      background: var(--blanco);
-      border-radius: 16px;
-      box-shadow: 0 6px 20px var(--shadow);
-      border: 1px solid var(--gris-medio);
-      overflow: hidden;
-      transition: transform .3s ease, box-shadow .3s ease;
+    .dia-card{
+      background:white;
+      border-radius:16px;
+      box-shadow:0 6px 20px var(--shadow);
+      border:1px solid var(--gris-medio);
+      overflow:hidden;
+      transition:.3s;
     }
+
     .dia-card:hover{
       transform:translateY(-4px);
       box-shadow:0 8px 24px rgba(33,33,33,0.15);
     }
 
-    .dia-header {
-      background: var(--gradient-2);
-      color: var(--blanco);
-      font-weight: 700;
-      padding: 12px;
-      text-align: center;
+    .dia-header{
+      background:var(--gradient-2);
+      color:white;
+      font-weight:700;
+      padding:12px;
+      text-align:center;
       font-size:1.1rem;
     }
 
-    .comidas { padding: 16px 20px; }
+    .comidas{padding:16px 20px;}
 
-    .comida h4 {
-      color: var(--naranja);
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-      font-weight:600;
+    .comida h4{
+      color:var(--naranja);
+      margin-bottom:6px;
     }
-    .comida p {
-      margin-left: 16px;
-      position: relative;
-      margin-bottom: 8px;
+
+    .comida p{
+      margin-left:16px;
+      margin-bottom:8px;
+      position:relative;
     }
-    .comida p::before {
+
+    .comida p::before{
       content:"▸";
       position:absolute;
       left:-12px;
@@ -145,137 +136,113 @@
       font-weight:bold;
     }
 
-    .nutricion {
-      background: var(--gradient-3);
-      padding: 26px 18px;
-      text-align: center;
-      color: var(--blanco);
-      border-radius: 16px;
-      margin: 30px 0 20px;
-      box-shadow: 0 6px 22px var(--shadow);
-    }
-    .nutricion h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .nutricion p {
-      max-width: 620px;
-      margin: 0 auto;
-      font-size: .9rem;
-      font-weight: 500;
-      line-height: 1.4;
+    .nutricion{
+      background:var(--gradient-3);
+      padding:26px 18px;
+      text-align:center;
+      color:white;
+      border-radius:16px;
+      margin:30px 0 20px;
+      box-shadow:0 6px 22px var(--shadow);
     }
 
-    footer {
-      text-align: center;
-      font-size: .8rem;
-      color: var(--gris-oscuro);
-      padding: 16px 0;
-      margin-top: 26px;
+    footer{
+      text-align:center;
+      font-size:.8rem;
+      color:var(--gris-oscuro);
+      padding:16px 0;
+      margin-top:26px;
       border-top:1px solid var(--gris-medio);
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div class="logo-box">
-        <img src="logo.png" alt="Logo Colegio Tlahtoani">
+<div class="container">
+
+<header>
+  <div class="logo-box">
+    <img src="logo.png" alt="Logo Colegio Tlahtoani">
+  </div>
+</header>
+
+<section class="hero">
+  <img src="imagenmenu.png" alt="Menú Escolar">
+</section>
+
+<div class="menu-grid">
+
+  <!-- MARTES -->
+  <div class="dia-card">
+    <div class="dia-header">Martes</div>
+    <div class="comidas">
+      <div class="comida">
+        <h4>Desayuno</h4>
+        <p>Huevo con jamón 🍳🥓</p>
       </div>
-    </header>
-
-    <section class="hero">
-      <img src="imagenmenu.png" alt="Menú Escolar Portada">
-    </section>
-
-    <!-- Cards de menú actualizado para Preescolar -->
-    <div class="menu-grid">
-      <div class="dia-card">
-        <div class="dia-header">Lunes</div>
-        <div class="comidas">
-          <div class="comida">
-            <h4>Desayuno</h4>
-            <p>Wafles con manzana y miel 🧇🍎🍯</p>
-          </div>
-          <div class="comida">
-            <h4>Comida</h4>
-            <p>Ensalada de atún con códito y verdura 🥗🐟</p>
-            <p>Crema y galletas saldas 🥣🍪</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dia-card">
-        <div class="dia-header">Martes</div>
-        <div class="comidas">
-          <div class="comida">
-            <h4>Desayuno</h4>
-            <p>Sandwich de jamón 🥪🥓</p>
-            <p>Pepino 🥒</p>
-          </div>
-          <div class="comida">
-            <h4>Comida</h4>
-            <p>Caldo de pollo con verdura y arroz 🍲🍗🥕🍚</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dia-card">
-        <div class="dia-header">Miércoles</div>
-        <div class="comidas">
-          <div class="comida">
-            <h4>Desayuno</h4>
-            <p>Quesadillas 🫓🧀</p>
-            <p>Jícama 🥒</p>
-          </div>
-          <div class="comida">
-            <h4>Comida</h4>
-            <p>Nuget de pescado 🐟</p>
-            <p>Espagueti 🍝</p>
-            <p>Zanahoria rallada con sal y limón 🥕🧂🍋</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dia-card">
-        <div class="dia-header">Jueves</div>
-        <div class="comidas">
-          <div class="comida">
-            <h4>Desayuno</h4>
-            <p>Huevo con jamón 🍳🥓</p>
-            <p>Jícama 🥒</p>
-          </div>
-          <div class="comida">
-            <h4>Comida</h4>
-            <p>Sopa de fideo con verduras 🍜🥕</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="dia-card">
-        <div class="dia-header">Viernes</div>
-        <div class="comidas">
-          <div class="comida">
-            <h4>Desayuno</h4>
-            <p>Chilaquiles con frijoles y queso 🌶️🫘🧀</p>
-          </div>
-          <div class="comida">
-            <h4>Comida</h4>
-            <p>Taquitos de adobada 🌮🥩</p>
-          </div>
-        </div>
+      <div class="comida">
+        <h4>Comida</h4>
+        <p>Caldo de albóndigas con verdura y arroz 🍲🥕🍚</p>
       </div>
     </div>
-
-    <section class="nutricion">
-      <h2>¡Alimentación Saludable, Mente Activa! 🧠💪</h2>
-      <p>Cada platillo está planeado para aportar energía, nutrientes esenciales y bienestar a nuestros estudiantes.</p>
-    </section>
-
-    <footer>
-      © 2025 Colegio Tlahtoani | Nutrición para el Futuro
-    </footer>
   </div>
+
+  <!-- MIÉRCOLES -->
+  <div class="dia-card">
+    <div class="dia-header">Miércoles</div>
+    <div class="comidas">
+      <div class="comida">
+        <h4>Desayuno</h4>
+        <p>Sandwich de jamón 🥪</p>
+      </div>
+      <div class="comida">
+        <h4>Comida</h4>
+        <p>Espagueti a la boloñesa 🍝</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JUEVES -->
+  <div class="dia-card">
+    <div class="dia-header">Jueves</div>
+    <div class="comidas">
+      <div class="comida">
+        <h4>Desayuno</h4>
+        <p>Huevo con frijoles 🍳🫘</p>
+      </div>
+      <div class="comida">
+        <h4>Comida</h4>
+        <p>Códitos con pollo en tiras 🍝🍗</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIERNES -->
+  <div class="dia-card">
+    <div class="dia-header">Viernes</div>
+    <div class="comidas">
+      <div class="comida">
+        <h4>Desayuno</h4>
+        <p>Hot cakes con miel y plátano 🥞🍯🍌</p>
+      </div>
+      <div class="comida">
+        <h4>Comida</h4>
+        <p>Enfrijoladas con queso 🫘🧀</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<section class="nutricion">
+  <h2>¡Alimentación Saludable, Mente Activa! 🧠💪</h2>
+  <p>Cada platillo está planeado para aportar energía y nutrientes esenciales a nuestros estudiantes.</p>
+</section>
+
+<footer>
+  © 2025 Colegio Tlahtoani | Nutrición para el Futuro
+</footer>
+
+</div>
 </body>
 </html>
