@@ -33,14 +33,11 @@
 
 body{
   font-family:Inter,sans-serif;
-
-  /* Colores menos difuminados (más visibles) */
   background:
     radial-gradient(500px 300px at 10% 10%, rgba(183,255,0,.45), transparent 60%),
     radial-gradient(450px 280px at 90% 15%, rgba(10,132,255,.35), transparent 60%),
     radial-gradient(500px 300px at 50% 95%, rgba(255,159,10,.35), transparent 60%),
     var(--bg);
-
   color:var(--text);
 }
 
@@ -62,9 +59,10 @@ body{
   background:rgba(255,255,255,.92);
   backdrop-filter:blur(10px);
   box-shadow:var(--shadow);
+  z-index:10;
 }
 
-.brand{display:flex;align-items:center;gap:10px;}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;}
 
 .logo-box{
   width:50px;height:50px;
@@ -74,11 +72,12 @@ body{
   place-items:center;
   overflow:hidden;
   box-shadow:0 6px 14px rgba(0,0,0,.12);
+  flex:0 0 auto;
 }
 .logo-box img{width:78%;}
 
-.school{font-weight:900;font-size:1rem;}
-.subtitle{font-size:.85rem;color:var(--muted);font-weight:600;}
+.school{font-weight:900;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.subtitle{font-size:.85rem;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 /* HERO */
 .hero{
@@ -96,7 +95,6 @@ body{
   font-weight:900;
   letter-spacing:.5px;
   line-height:1.1;
-
   background:linear-gradient(90deg,#0a84ff,#34c759,#7c3aed);
   -webkit-background-clip:text;
   background-clip:text;
@@ -114,7 +112,7 @@ body{
 }
 
 .cover{border-radius:var(--radius-lg);overflow:hidden;}
-.cover img{width:100%;height:200px;object-fit:cover;}
+.cover img{width:100%;height:200px;object-fit:cover;display:block;}
 
 /* SECTION */
 .section{margin-top:16px;}
@@ -270,64 +268,82 @@ footer{
 
 <div class="menu-grid">
 
+<!-- LUNES -->
+<div class="day-card">
+  <div class="day-top">Lunes <span class="mini-tag">Preescolar</span></div>
+  <div class="content">
+    <div class="block">
+      <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
+      <div class="item"><span class="bullet"></span>Hot cakes con fruta</div>
+    </div>
+    <div class="block">
+      <div class="block-title">🥗 Comida <span class="pill">PM</span></div>
+      <div class="item"><span class="bullet"></span>Ceviche de soya</div>
+    </div>
+  </div>
+</div>
+
 <!-- MARTES -->
 <div class="day-card">
-<div class="day-top">Martes <span class="mini-tag">Preescolar</span></div>
-<div class="content">
-<div class="block">
-<div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
-<div class="item"><span class="bullet"></span>Huevo con jamón</div>
-</div>
-<div class="block">
-<div class="block-title">🍲 Comida <span class="pill">PM</span></div>
-<div class="item"><span class="bullet"></span>Caldo de albóndigas con verdura y arroz</div>
-</div>
-</div>
+  <div class="day-top">Martes <span class="mini-tag">Preescolar</span></div>
+  <div class="content">
+    <div class="block">
+      <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
+      <div class="item"><span class="bullet"></span>Huevo con jamón</div>
+    </div>
+    <div class="block">
+      <div class="block-title">🍲 Comida <span class="pill">PM</span></div>
+      <div class="item"><span class="bullet"></span>Albóndigas en caldo con verdura y arroz</div>
+    </div>
+  </div>
 </div>
 
 <!-- MIÉRCOLES -->
 <div class="day-card">
-<div class="day-top">Miércoles <span class="mini-tag">Preescolar</span></div>
-<div class="content">
-<div class="block">
-<div class="block-title">🥪 Desayuno <span class="pill">AM</span></div>
-<div class="item"><span class="bullet"></span>Sandwich de jamón</div>
-</div>
-<div class="block">
-<div class="block-title">🍝 Comida <span class="pill">PM</span></div>
-<div class="item"><span class="bullet"></span>Espagueti a la boloñesa</div>
-</div>
-</div>
+  <div class="day-top">Miércoles <span class="mini-tag">Preescolar</span></div>
+  <div class="content">
+    <div class="block">
+      <div class="block-title">🫘 Desayuno <span class="pill">AM</span></div>
+      <div class="item"><span class="bullet"></span>Enfrijoladas con queso</div>
+    </div>
+    <div class="block">
+      <div class="block-title">🥔 Comida <span class="pill">PM</span></div>
+      <div class="item"><span class="bullet"></span>Chorizo con papas</div>
+    </div>
+  </div>
 </div>
 
 <!-- JUEVES -->
 <div class="day-card">
-<div class="day-top">Jueves <span class="mini-tag">Preescolar</span></div>
-<div class="content">
-<div class="block">
-<div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
-<div class="item"><span class="bullet"></span>Huevo con frijoles</div>
-</div>
-<div class="block">
-<div class="block-title">🍝 Comida <span class="pill">PM</span></div>
-<div class="item"><span class="bullet"></span>Códitos con pollo en tiras</div>
-</div>
-</div>
+  <div class="day-top">Jueves <span class="mini-tag">Preescolar</span></div>
+  <div class="content">
+    <div class="block">
+      <div class="block-title">🥣 Desayuno <span class="pill">AM</span></div>
+      <div class="item"><span class="bullet"></span>Yogurt con fruta</div>
+    </div>
+    <div class="block">
+      <div class="block-title">🥗 Comida <span class="pill">PM</span></div>
+      <div class="item"><span class="bullet"></span>Ensalada de atún con elotes, verdura y códitos</div>
+      <div class="item"><span class="bullet"></span>Galleta salada</div>
+    </div>
+  </div>
 </div>
 
 <!-- VIERNES -->
 <div class="day-card">
-<div class="day-top">Viernes <span class="mini-tag">Preescolar</span></div>
-<div class="content">
-<div class="block">
-<div class="block-title">🥞 Desayuno <span class="pill">AM</span></div>
-<div class="item"><span class="bullet"></span>Hot cakes con miel y plátano</div>
-</div>
-<div class="block">
-<div class="block-title">🫘 Comida <span class="pill">PM</span></div>
-<div class="item"><span class="bullet"></span>Enfrijoladas con queso</div>
-</div>
-</div>
+  <div class="day-top">Viernes <span class="mini-tag">Preescolar</span></div>
+  <div class="content">
+    <div class="block">
+      <div class="block-title">🍲 Desayuno <span class="pill">AM</span></div>
+      <div class="item"><span class="bullet"></span>Lentejas guisadas (1 o 2 tortillas)</div>
+      <div class="item"><span class="bullet"></span>Piña</div>
+    </div>
+    <div class="block">
+      <div class="block-title">🍝 Comida <span class="pill">PM</span></div>
+      <div class="item"><span class="bullet"></span>Espagueti con jamón</div>
+      <div class="item"><span class="bullet"></span>Zanahoria rallada</div>
+    </div>
+  </div>
 </div>
 
 </div>
