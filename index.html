@@ -47,7 +47,6 @@ body{
   padding:14px 0 22px;
 }
 
-/* TOPBAR */
 .topbar{
   position:sticky;
   top:10px;
@@ -79,7 +78,6 @@ body{
 .school{font-weight:900;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .subtitle{font-size:.85rem;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
-/* HERO */
 .hero{
   margin-top:14px;
   border-radius:var(--radius-xl);
@@ -114,7 +112,6 @@ body{
 .cover{border-radius:var(--radius-lg);overflow:hidden;}
 .cover img{width:100%;height:200px;object-fit:cover;display:block;}
 
-/* SECTION */
 .section{margin-top:16px;}
 .section-head{
   display:flex;
@@ -122,17 +119,12 @@ body{
   padding:0 6px;
   margin-bottom:10px;
 }
-.section-head h2{
-  font-size:1rem;
-  font-weight:900;
-}
+.section-head h2{font-size:1rem;font-weight:900;}
 
-/* GRID */
 .menu-grid{display:grid;gap:12px;}
 @media(min-width:640px){.menu-grid{grid-template-columns:repeat(2,1fr);}}
 @media(min-width:960px){.menu-grid{grid-template-columns:repeat(4,1fr);}}
 
-/* DAY CARD */
 .day-card{
   background:linear-gradient(160deg,#ffffff,#f9fff4);
   border-radius:var(--radius-xl);
@@ -198,7 +190,6 @@ body{
   margin-top:6px;
 }
 
-/* NUTRICIÓN */
 .nutricion{
   margin-top:16px;
   background:linear-gradient(135deg,#ffffff,#f3fff0);
@@ -236,125 +227,127 @@ footer{
 <body>
 <div class="container">
 
-<div class="topbar">
-  <div class="brand">
-    <div class="logo-box">
-      <img src="logo.png" alt="Logo Colegio Tlahtoani">
-    </div>
-    <div>
-      <div class="school">Colegio Tlahtoani</div>
-      <div class="subtitle">Menú Escolar – Preescolar</div>
-    </div>
-  </div>
-</div>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-title">
-      <h1>Menú Preescolar</h1>
-      <div class="badge">🧠💪 Alimentación saludable</div>
-    </div>
-
-    <div class="cover">
-      <img src="imagenmenu.png" alt="Menú Escolar">
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo-box">
+        <img src="logo.png" alt="Logo Colegio Tlahtoani">
+      </div>
+      <div>
+        <div class="school">Colegio Tlahtoani</div>
+        <div class="subtitle">Menú Escolar – Preescolar</div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="section">
-<div class="section-head">
-<h2>Platillos de la semana</h2>
-</div>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-title">
+        <h1>Menú Preescolar</h1>
+        <div class="badge">🧠💪 Alimentación saludable</div>
+      </div>
+      <div class="cover">
+        <img src="imagenmenu.png" alt="Menú Escolar">
+      </div>
+    </div>
+  </section>
 
-<div class="menu-grid">
+  <section class="section">
+    <div class="section-head">
+      <h2>Platillos de la semana</h2>
+    </div>
 
-<!-- LUNES -->
-<div class="day-card">
-  <div class="day-top">Lunes <span class="mini-tag">Preescolar</span></div>
-  <div class="content">
-    <div class="block">
-      <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
-      <div class="item"><span class="bullet"></span>Hot cakes con fruta</div>
-    </div>
-    <div class="block">
-      <div class="block-title">🥗 Comida <span class="pill">PM</span></div>
-      <div class="item"><span class="bullet"></span>Ceviche de soya</div>
-    </div>
-  </div>
-</div>
+    <div class="menu-grid">
 
-<!-- MARTES -->
-<div class="day-card">
-  <div class="day-top">Martes <span class="mini-tag">Preescolar</span></div>
-  <div class="content">
-    <div class="block">
-      <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
-      <div class="item"><span class="bullet"></span>Huevo con jamón</div>
-    </div>
-    <div class="block">
-      <div class="block-title">🍲 Comida <span class="pill">PM</span></div>
-      <div class="item"><span class="bullet"></span>Albóndigas en caldo con verdura y arroz</div>
-    </div>
-  </div>
-</div>
+      <!-- LUNES -->
+      <div class="day-card">
+        <div class="day-top">Lunes <span class="mini-tag">Preescolar</span></div>
+        <div class="content">
+          <div class="block">
+            <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
+            <div class="item"><span class="bullet"></span>Enfrijoladas con queso</div>
+          </div>
+          <div class="block">
+            <div class="block-title">🍲 Comida <span class="pill">PM</span></div>
+            <div class="item"><span class="bullet"></span>Sopa de arroz con verdura</div>
+            <div class="item"><span class="bullet"></span>Pollo empanizado</div>
+          </div>
+        </div>
+      </div>
 
-<!-- MIÉRCOLES -->
-<div class="day-card">
-  <div class="day-top">Miércoles <span class="mini-tag">Preescolar</span></div>
-  <div class="content">
-    <div class="block">
-      <div class="block-title">🫘 Desayuno <span class="pill">AM</span></div>
-      <div class="item"><span class="bullet"></span>Enfrijoladas con queso</div>
-    </div>
-    <div class="block">
-      <div class="block-title">🥔 Comida <span class="pill">PM</span></div>
-      <div class="item"><span class="bullet"></span>Chorizo con papas</div>
-    </div>
-  </div>
-</div>
+      <!-- MARTES -->
+      <div class="day-card">
+        <div class="day-top">Martes <span class="mini-tag">Preescolar</span></div>
+        <div class="content">
+          <div class="block">
+            <div class="block-title">🌮 Desayuno <span class="pill">AM</span></div>
+            <div class="item"><span class="bullet"></span>Taquitos de papa con queso y salsa de jitomate</div>
+            <div class="item"><span class="bullet"></span>Manzana</div>
+          </div>
+          <div class="block">
+            <div class="block-title">🍝 Comida <span class="pill">PM</span></div>
+            <div class="item"><span class="bullet"></span>Espagueti a la boloñesa</div>
+          </div>
+        </div>
+      </div>
 
-<!-- JUEVES -->
-<div class="day-card">
-  <div class="day-top">Jueves <span class="mini-tag">Preescolar</span></div>
-  <div class="content">
-    <div class="block">
-      <div class="block-title">🥣 Desayuno <span class="pill">AM</span></div>
-      <div class="item"><span class="bullet"></span>Yogurt con fruta</div>
-    </div>
-    <div class="block">
-      <div class="block-title">🥗 Comida <span class="pill">PM</span></div>
-      <div class="item"><span class="bullet"></span>Ensalada de atún con elotes, verdura y códitos</div>
-      <div class="item"><span class="bullet"></span>Galleta salada</div>
-    </div>
-  </div>
-</div>
+      <!-- MIÉRCOLES -->
+      <div class="day-card">
+        <div class="day-top">Miércoles <span class="mini-tag">Preescolar</span></div>
+        <div class="content">
+          <div class="block">
+            <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
+            <div class="item"><span class="bullet"></span>Huevo con tortilla</div>
+            <div class="item"><span class="bullet"></span>Piña</div>
+          </div>
+          <div class="block">
+            <div class="block-title">🌮 Comida <span class="pill">PM</span></div>
+            <div class="item"><span class="bullet"></span>Taquitos de bistec</div>
+            <div class="item"><span class="bullet"></span>Frijoles de la olla</div>
+          </div>
+        </div>
+      </div>
 
-<!-- VIERNES -->
-<div class="day-card">
-  <div class="day-top">Viernes <span class="mini-tag">Preescolar</span></div>
-  <div class="content">
-    <div class="block">
-      <div class="block-title">🍲 Desayuno <span class="pill">AM</span></div>
-      <div class="item"><span class="bullet"></span>Lentejas guisadas (1 o 2 tortillas)</div>
-      <div class="item"><span class="bullet"></span>Piña</div>
+      <!-- JUEVES -->
+      <div class="day-card">
+        <div class="day-top">Jueves <span class="mini-tag">Preescolar</span></div>
+        <div class="content">
+          <div class="block">
+            <div class="block-title">🥪 Desayuno <span class="pill">AM</span></div>
+            <div class="item"><span class="bullet"></span>Mollete de frijoles con queso</div>
+          </div>
+          <div class="block">
+            <div class="block-title">🍜 Comida <span class="pill">PM</span></div>
+            <div class="item"><span class="bullet"></span>Sopa de fideo con verduras</div>
+            <div class="item"><span class="bullet"></span>Pollo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIERNES -->
+      <div class="day-card">
+        <div class="day-top">Viernes <span class="mini-tag">Preescolar</span></div>
+        <div class="content">
+          <div class="block">
+            <div class="block-title">🍳 Desayuno <span class="pill">AM</span></div>
+            <div class="item"><span class="bullet"></span>Huevo en salsa de jitomate (1 tortilla)</div>
+          </div>
+          <div class="block">
+            <div class="block-title">🍚 Comida <span class="pill">PM</span></div>
+            <div class="item"><span class="bullet"></span>Morisqueta (1 o 2 tortillas)</div>
+            <div class="item"><span class="bullet"></span>Jícama</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="block">
-      <div class="block-title">🍝 Comida <span class="pill">PM</span></div>
-      <div class="item"><span class="bullet"></span>Espagueti con jamón</div>
-      <div class="item"><span class="bullet"></span>Zanahoria rallada</div>
-    </div>
-  </div>
-</div>
+  </section>
 
-</div>
-</section>
+  <section class="nutricion">
+    <h2>¡Alimentación Saludable, Mente Activa! 🧠💪</h2>
+    <p>Cada platillo está planeado para aportar energía y nutrientes esenciales para nuestros estudiantes.</p>
+  </section>
 
-<section class="nutricion">
-<h2>¡Alimentación Saludable, Mente Activa! 🧠💪</h2>
-<p>Cada platillo está planeado para aportar energía y nutrientes esenciales para nuestros estudiantes.</p>
-</section>
-
-<footer>© 2025 Colegio Tlahtoani | Nutrición para el Futuro</footer>
+  <footer>© 2025 Colegio Tlahtoani | Nutrición para el Futuro</footer>
 
 </div>
 </body>
